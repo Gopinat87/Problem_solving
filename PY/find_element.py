@@ -1,36 +1,11 @@
-# Find the Majority Element
-# Question
+a = [10, 20, 30, 40, 50]
+b = [30, 40, 50, 60, 70]
 
-# Given an array, find the element that appears more than n/2 times.
+common = []
 
-# If there is no such element, return -1.
+for num in a:
 
-# Input
-# [2, 2, 1, 1, 1, 2, 2]
-# Output
-# 2
+    if num in b and num not in common:
+        common.append(num)
 
-def majority_element(arr):
-
-    candidate = None
-    count = 0
-
-    for num in arr:
-
-        if count == 0:
-            candidate = num
-
-        if num == candidate:
-            count += 1
-        else:
-            count -= 1
-
-    if arr.count(candidate) > len(arr) // 2:
-        return candidate
-
-    return -1
-
-
-arr = [2, 2, 1, 1, 1, 2, 2]
-
-print(majority_element(arr))
+print("Common elements:", common)
