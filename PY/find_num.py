@@ -1,23 +1,11 @@
-def second_smallest(arr):
+numbers = [1, 2, 3, 4, 6, 7, 8, 9, 10]
 
-    smallest = float('inf')
-    second = float('inf')
+n = 10
 
-    for num in arr:
+total = n * (n + 1) // 2
 
-        if num < smallest:
-            second = smallest
-            smallest = num
+actual_sum = sum(numbers)
 
-        elif smallest < num < second:
-            second = num
+missing = total - actual_sum
 
-    if second == float('inf'):
-        return -1
-
-    return second
-
-
-arr = [8,5,2,9,5,6]
-
-print(second_smallest(arr))
+print("Missing number:", missing)
